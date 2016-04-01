@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Robin Grow
+// @name         Robin Grow spamless+
 // @namespace    http://tampermonkey.net/
 // @version      0.8
 // @description  Try to take over the world!
-// @author       /u/mvartan
+// @author       /u/mvartan, /u/mr_yogurt
 // @include      https://www.reddit.com/robin*
 // @grant        none
 // ==/UserScript==
