@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.9
 // @description  Try to take over the world!
-// @author       /u/mvartan+/u/mr_yogurt
+// @author       /u/mvartan+others
 // @include      https://www.reddit.com/robin*
 // @grant        none
 // ==/UserScript==
