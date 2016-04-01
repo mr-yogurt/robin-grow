@@ -34,16 +34,18 @@ function howLongLeft() { // mostly from /u/Yantrio
     'use strict';
 
 
-    $(".robin-chat--sidebar").prepend("<div class='addon' style='font-size:15pt;display:block;'><div class='grows'></div><div class='stays'></div><div class='abandons'></div><div class='novote'></div><div class='timeleft'></div></div>");
+    $(".robin-chat--sidebar").prepend("<div class='addon' style='font-size:15pt;display:block;'><div class='totals'></div><div class='grows'></div><div class='stays'></div><div class='abandons'></div><div class='novote'></div><div class='timeleft'></div></div>");
     var timeStarted = new Date();
 
     function update() {
         $(".timeleft").text(howLongLeft()+" minutes remaining");
+        $(".addon .totals").text("Total: "+($(".robin-room-participant.robin--vote-class--increase").length + $(".robin-room-participant.robin--vote-class--abandon").length + $(".robin-room-participant.robin--vote-class--continue").length + $(".robin-room-participant.robin--vote-class--novote").length));
         $(".addon .grows").text("Grows: "+$(".robin-room-participant.robin--vote-class--increase").length);
         $(".addon .abandons").text("Abandons: "+$(".robin-room-participant.robin--vote-class--abandon").length);
         $(".addon .stays").text("Stays: "+$(".robin-room-participant.robin--vote-class--continue").length);
         $(".addon .novote").text("No Vote: "+$(".robin-room-participant.robin--vote-class--novote").length);
-
+        
+        
         var lastChatString = $(".robin-message--timestamp").last().attr("datetime");
         var timeSinceLastChat = new Date() - (new Date(lastChatString));
         var now = new Date();
@@ -71,7 +73,6 @@ update();
 
 setTimeout(function() {
     var x = "!", n=Math.floor(Math.random()*15); for(var i = 0; i < n; i++)x+="!";
-            $(".text-counter-input").val("[Robin-Grow] I automatically voted to grow, and so can you! http://redd.it/4cwk2s "+x).submit();
 
 
 }, 10000);
